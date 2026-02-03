@@ -1,5 +1,6 @@
 import restapiImage from '@/assets/images/restapi.png'
 import settlingScoresImage from '@/assets/images/settling-scores.png'
+import movieAppImage from '@/assets/images/movie-app.png'
 
 export function Projects() {
   // Projects data for demonstration
@@ -29,9 +30,9 @@ export function Projects() {
     {
       _id: "3",
       title: "Movie App",
-      image: "",
+      image: movieAppImage,
       description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite"],
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
       githubUrl: "https://github.com/Legion345/movie_app",
       // liveUrl: "https://weather-demo.com",
       featured: false,
