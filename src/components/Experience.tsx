@@ -1,3 +1,7 @@
+import streetSoundImage from '@/assets/images/street-sound-society.png'
+import sobrietySevenImage from '@/assets/images/sobriety-seven.png'
+import harelImage from '@/assets/images/harel.jpg'
+
 export function Experience() {
   // Sample experience data for demonstration
   const sampleExperience = [
@@ -8,17 +12,17 @@ export function Experience() {
       startDate: "2025-06",
       endDate: undefined,
       description: "Built scalable app architecture and databases for 10+ features, developed responsive real-time social media frontends, secured backends with API rate limiting, integrated Clerk for seamless authentication, and optimized queries for faster profile and feed loads.",
-      technologies: ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS"],
-      order: 1
-    },
-    {
-      _id: "2",
+      technologies: ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS"], 
+      logo: sobrietySevenImage,
+      order: 1 }, 
+    { _id: "2",
       company: "Street Sound Society",
       position: "Embedded Systems Engineer",
       startDate: "2025-01",
       endDate: "2025-06",
       description: "Developed C++ code for a relay ensuring proper activation and hardware integration, troubleshot and resolved voltage conversion issues for reliable retractable microphone operation in real-time applications, and conducted QA testing to identify and fix functionality issues enhancing system reliability and performance.",
       technologies: ["Arduino", "C++", "Microprocessors"],
+      logo: streetSoundImage,
       order: 2
     },
     {
@@ -29,6 +33,7 @@ export function Experience() {
       endDate: "2025-01",
       description: "Collaborated with a senior developer/founder to create solutions in their startup on hardware component reliability.",
       technologies: ["C++", "Makefile", "Arduino"],
+      logo: harelImage,
       order: 3
     },
   ];
@@ -65,12 +70,23 @@ export function Experience() {
                 <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                   <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100">
                     <div className="mb-4">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                        {exp.position}
-                      </h3>
-                      <h4 className="text-lg text-blue-600 font-medium mb-2">
-                        {exp.company}
-                      </h4>
+                      <div className="flex items-center mb-2">
+                        {exp.logo && (
+                          <img
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="w-14 h-14 mr-3"
+                          />
+                        )}
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                            {exp.position}
+                          </h3>
+                          <h4 className="text-lg text-blue-600 font-medium">
+                            {exp.company}
+                          </h4>
+                        </div>
+                      </div>
                       <p className="text-sm text-gray-500">
                         {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Present'}
                       </p>
@@ -99,3 +115,5 @@ export function Experience() {
     </section>
   );
 }
+
+
