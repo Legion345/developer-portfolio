@@ -1,11 +1,17 @@
+import harelImage from '@/assets/images/harel.png'
+
 export function Hero() {
   return (
     <section id="home" className="pt-16 bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-             HA 
+            <div className="w-32 h-32 mx-auto bg-white rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+              <img
+                src={harelImage}
+                alt="Harel Asaraf"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
           
@@ -18,8 +24,8 @@ export function Hero() {
           </h2>
           
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-              I was always fascinated by technology & its endless possibilities. I spent hours tinkering with gadgets, breaking them open and trying to understand how they worked.
-
+              I was always fascinated by technology & its endless possibilities. I spent hours tinkering with gadgets, breaking them open, and trying to understand how they worked.
+              <br/><br/>
               Now, I build software. With plenty of experience spanning 4 years and contributions in open source, I'm the guy to count on.
           </p>
           
