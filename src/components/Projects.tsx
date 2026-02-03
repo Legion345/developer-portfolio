@@ -1,10 +1,13 @@
+import restapiImage from '@/assets/images/restapi.png'
+import settlingScoresImage from '@/assets/images/settling-scores.png'
+
 export function Projects() {
   // Projects data for demonstration
   const sampleProjects = [
     {
       _id: "1",
       title: "Meetup Groups REST API",
-      image: "",
+      image: restapiImage,
       description:"The Meetup Groups REST API is a Spring Boot application designed to help discover and manage technology meetup groups. This API provides endpoints to browse technology meetup groups organized by city and technology focus, making it easy to find and connect with local tech communities.",
       technologies: ["Java", "Spring Boot", "Gradle"],
       githubUrl: "https://github.com/Legion345/springboot-restapi",
@@ -15,7 +18,7 @@ export function Projects() {
     {
       _id: "2",
       title: "Settling Scores App",
-      image: "",
+      image: settlingScoresImage,
       description: "A collaborative task management REST API with real-time updates, and to settle any differences between two parties.",
       technologies: ["Java", "Postman", "Spring Boot", "Gradle"],
       githubUrl: "https://github.com/Legion345/settling-scores/tree/master",
@@ -56,7 +59,7 @@ export function Projects() {
               <img
                 src={project.image}
                 alt={`Screenshot or thumbnail for ${project.title}`}
-                className="w-full h-48 object-cover"
+                className={`w-full h-48 ${project._id === "2" ? "object-contain bg-gray-50" : "object-cover"} `}
               />
             ) : (
               <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
