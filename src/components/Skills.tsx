@@ -19,9 +19,6 @@ export function Skills() {
     { _id: "11", name: "Gradle", category: "tools", proficiency: 5, order: 2 },
     { _id: "12", name: "Linux", category: "tools", proficiency: 5, order: 3 },
     
-    // Databases
-    { _id: "13", name: "MongoDB", category: "databases", proficiency: 4, order: 1 },
-    { _id: "14", name: "MySQL", category: "databases", proficiency: 4, order: 2 },
   ];
 
   const displaySkills = sampleSkills;
@@ -35,8 +32,8 @@ export function Skills() {
   }, {} as Record<string, typeof displaySkills>);
 
   const categoryTitles = {
-    languages: "Programming Languages",
-    frameworks: "Frameworks & Libraries",
+    languages: "Software Development",
+    frameworks: "Frontend Dev/React",
     tools: "Tools & Technologies",
     databases: "Databases"
   };
@@ -50,11 +47,11 @@ export function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-left mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Skills & Technologies
+            My Expertise
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
             <div key={category} className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
