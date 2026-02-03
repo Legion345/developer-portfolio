@@ -32,7 +32,7 @@ export function Projects() {
       title: "Movie App",
       image: movieAppImage,
       description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite"],
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
       githubUrl: "https://github.com/Legion345/movie_app",
       // liveUrl: "https://weather-demo.com",
       featured: false,
