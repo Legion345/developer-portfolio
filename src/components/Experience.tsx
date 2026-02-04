@@ -4,6 +4,7 @@ import sobrietySevenImage from '@/assets/images/sobriety-seven.png'
 import harelImage from '@/assets/images/harel.jpg'
 
 export function Experience() {
+  // Work experience section with accordion functionality
   // Sample experience data for demonstration
   const sampleExperience = [
     {

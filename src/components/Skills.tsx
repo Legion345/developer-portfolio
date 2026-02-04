@@ -2,23 +2,27 @@ export function Skills() {
   // Sample skills data for demonstration
   const sampleSkills = [
     // Languages
-    { _id: "1", name: "Java", category: "languages", proficiency: 5, order: 1 },
-    { _id: "2", name: "C++", category: "languages", proficiency: 4, order: 2 },
-    { _id: "3", name: "JavaScript", category: "languages", proficiency: 5, order: 3 },
-    { _id: "4", name: "TypeScript", category: "languages", proficiency: 4, order: 4 },
-    { _id: "5", name: "Python", category: "languages", proficiency: 4, order: 5 },
-    
-    // Frameworks
-    { _id: "6", name: "Spring Boot", category: "frameworks", proficiency: 5, order: 1 },
-    { _id: "7", name: "React Native", category: "frameworks", proficiency: 5, order: 2 },
-    { _id: "8", name: "Node.js", category: "frameworks", proficiency: 5, order: 3 },
-    { _id: "9", name: "Expo", category: "frameworks", proficiency: 5, order: 4 },
-    
-    // Tools
-    { _id: "10", name: "Git", category: "tools", proficiency: 5, order: 1 },
-    { _id: "11", name: "Gradle", category: "tools", proficiency: 5, order: 2 },
-    { _id: "12", name: "Linux", category: "tools", proficiency: 5, order: 3 },
-    
+    {
+      _id: "1",
+      category: "languages",
+      description: "Experienced in both functional and OOP: Dart, Python, Java, JavaScript, TypeScript.",
+      order: 1
+    },
+        // Frameworks
+    {
+      _id: "6",
+      category: "backend",
+      description: "Passionate about API design and optimization, with over 3+ years of experience in backend technologies including Java, SQL, and PostgreSQL.",
+      order: 1
+    },
+        // Tools
+    {
+      _id: "10",
+      category: "mobile",
+      description: "Skilled in developing hybrid mobile apps and cross-platform solutions using the Flutter framework.",
+      order: 1
+    },
+
   ];
 
   const displaySkills = sampleSkills;
@@ -32,14 +36,9 @@ export function Skills() {
   }, {} as Record<string, typeof displaySkills>);
 
   const categoryTitles = {
-    languages: "Software Development",
-    frameworks: "Frontend Dev/React",
-    tools: "Tools & Technologies",
-    databases: "Databases"
-  };
-
-  const getProficiencyWidth = (proficiency: number) => {
-    return `${(proficiency / 5) * 100}%`;
+    languages: { line1: "Software", line2: "Development" },
+    backend: { line1: "Backend Dev", line2: "Springboot, REST API" },
+    mobile: { line1: "React Native Dev", line2: "Android, iOS" },
   };
 
   return (
@@ -55,7 +54,9 @@ export function Skills() {
           {Object.entries(groupedSkills).map(([category, categorySkills]) => (
             <div key={category} className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                {categoryTitles[category as keyof typeof categoryTitles]}
+                {categoryTitles[category as keyof typeof categoryTitles].line1}
+                <br />
+                {categoryTitles[category as keyof typeof categoryTitles].line2}
               </h3>
               
               <div className="space-y-4">
@@ -63,20 +64,12 @@ export function Skills() {
                   .sort((a, b) => a.order - b.order)
                   .map((skill) => (
                     <div key={skill._id}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-gray-700">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-gray-500">
-                          {skill.proficiency}/5
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                          style={{ width: getProficiencyWidth(skill.proficiency) }}
-                        ></div>
-                      </div>
+                      <h4 className="text-base font-semibold text-gray-900 mb-2">
+                        {skill.name}
+                      </h4>
+                      <p className="text-md text-gray-600 leading-relaxed">
+                        {skill.description}
+                      </p>
                     </div>
                   ))}
               </div>
