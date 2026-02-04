@@ -5,21 +5,21 @@ export function Skills() {
     {
       _id: "1",
       category: "languages",
-      description: "Experienced in both functional and OOP: Dart, Python, Java, JavaScript, TypeScript.",
+      description: "Experienced in both functional and OOP: Java, C++, Python, JavaScript, TypeScript, HTML & CSS, and Lua.",
       order: 1
     },
         // Frameworks
     {
       _id: "6",
       category: "backend",
-      description: "Passionate about API design and optimization, with over 3+ years of experience in backend technologies including Java, SQL, and PostgreSQL.",
+      description: "Passionate about API design and optimization, with over 3+ years of experience in backend technologies including Java Spring boot, SQL, and PostgreSQL.",
       order: 1
     },
         // Tools
     {
       _id: "10",
       category: "mobile",
-      description: "Skilled in developing hybrid mobile apps and cross-platform solutions using the Flutter framework.",
+      description: "Skilled in developing hybrid mobile apps and cross-platform solutions using the React Native framework.",
       order: 1
     },
 
