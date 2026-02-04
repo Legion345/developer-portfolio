@@ -4,7 +4,7 @@ import movieAppImage from '@/assets/images/movie-app.png'
 
 export function Projects() {
   // Projects data for demonstration
-  const sampleProjects = [
+  const myProjects = [
     {
       _id: "1",
       title: "Meetup Groups REST API",
@@ -40,7 +40,7 @@ export function Projects() {
     }
   ];
 
-  const displayProjects = sampleProjects;
+  const displayProjects = myProjects;
 
   return (
     <section id="projects" className="py-20 bg-white">

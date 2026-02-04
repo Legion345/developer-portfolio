@@ -1,21 +1,15 @@
 export function Skills() {
-  // Sample skills data for demonstration
-  const sampleSkills = [
-    // Languages
-    {
-      _id: "1",
-      category: "languages",
+  const mySkills = [
+    { _id: "1", category: "languages",
       description: "Experienced in both functional and OOP: Java, C++, Python, JavaScript, TypeScript, HTML & CSS, and Lua.",
       order: 1
     },
-        // Frameworks
     {
       _id: "6",
       category: "backend",
-      description: "Passionate about API design and optimization, with over 3+ years of experience in backend technologies including Java Spring boot, SQL, and PostgreSQL.",
+      description: "Passionate about API design and optimization, with over 3+ years of experience in backend technologies including Java, Spring boot, SQL, and PostgreSQL.",
       order: 1
     },
-        // Tools
     {
       _id: "10",
       category: "mobile",
@@ -25,7 +19,7 @@ export function Skills() {
 
   ];
 
-  const displaySkills = sampleSkills;
+  const displaySkills = mySkills;
 
   const groupedSkills = displaySkills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
