@@ -37,7 +37,53 @@ export function Projects() {
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 3
-    }
+    },
+     {
+      _id: "4",
+      title: "placeholder",
+      image: movieAppImage,
+      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
+      githubUrl: "https://github.com/Legion345/movie_app",
+      // liveUrl: "https://weather-demo.com",
+      featured: false,
+      order: 4
+    },
+     {
+      _id: "5",
+      title: "placeholder",
+      image: movieAppImage,
+      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
+      githubUrl: "https://github.com/Legion345/movie_app",
+      // liveUrl: "https://weather-demo.com",
+      featured: false,
+      order: 5
+    },
+     {
+      _id: "6",
+      title: "placeholder",
+      image: movieAppImage,
+      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
+      githubUrl: "https://github.com/Legion345/movie_app",
+      // liveUrl: "https://weather-demo.com",
+      featured: false,
+      order: 6
+    },
+
+   {
+      _id: "7",
+      title: "placeholder",
+      image: movieAppImage,
+      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
+      githubUrl: "https://github.com/Legion345/movie_app",
+      // liveUrl: "https://weather-demo.com",
+      featured: false,
+      order: 7
+    },
+
   ];
 
   const displayProjects = myProjects;
