@@ -130,7 +130,7 @@ export function Contact() {
                     const body = encodeURIComponent(
                       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
                     );
-                    window.location.href = `mailto:harelasaraf@gmail.com?subject=${subject}&body=${body}`;
+                    window.location.href = `mailto:harel@harelasaraf.com?subject=${subject}&body=${body}`;
                   }}
                   className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
                 >
