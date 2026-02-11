@@ -26,31 +26,31 @@ export function Header() {
                 onClick={() => scrollToSection('home')}
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                // Home
-              </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                // Projects
+                // home
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                // Skills
+                // skills
+              </button>
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                // projects
               </button>
               <button
                 onClick={() => scrollToSection('experience')}
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                // Experience
+                // experience
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                // Contact
+                // contact
               </button>
             </div>
           </div>
@@ -80,31 +80,31 @@ export function Header() {
                 onClick={() => scrollToSection('home')}
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
               >
-               // Home
-              </button>
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
-              >
-                // Projects
+               // home
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
               >
-                // Skills
+                // skills
+              </button>
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
+              >
+                // projects
               </button>
               <button
                 onClick={() => scrollToSection('experience')}
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
               >
-                // Experience
+                // experience
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
               >
-                // Contact
+                // contact
               </button>
             </div>
           </div>
