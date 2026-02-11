@@ -1,6 +1,7 @@
 import restapiImage from '@/assets/images/restapi.png'
 import settlingScoresImage from '@/assets/images/settling-scores.png'
 import movieAppImage from '@/assets/images/movie-app.png'
+import sababaNightsImage from '@/assets/images/sababanights.png'
 
 export function Projects() {
   // Projects data for demonstration
@@ -18,7 +19,7 @@ export function Projects() {
     },
     {
       _id: "2",
-      title: "Settling Scores App",
+      title: "Settling Scores App - REST API",
       image: settlingScoresImage,
       description: "A collaborative task management REST API with real-time updates, and to settle any differences between two parties.",
       technologies: ["Java", "Postman", "Spring Boot", "Gradle"],
@@ -29,7 +30,7 @@ export function Projects() {
     },
     {
       _id: "3",
-      title: "Movie App",
+      title: "Movie App - Mobile",
       image: movieAppImage,
       description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
       technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
@@ -38,55 +39,91 @@ export function Projects() {
       featured: false,
       order: 3
     },
-     {
+    {
       _id: "4",
-      title: "placeholder",
-      image: movieAppImage,
-      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
-      githubUrl: "https://github.com/Legion345/movie_app",
+      title: "Sababa Nights Dancing - Web Development",
+      image: sababaNightsImage,
+      description: "Sababa Nights Dancing mixes styles of Israeli Dancing and many other popular styles of dancing with creativity. It goes one step further with a team that is passionate that implements a feeling of community from the services provided. Connectivity at work from session locations and event planning with a people-centred focus.",
+      technologies: ["TypeScript", "JavaScript", "React", "Tailwind CSS", "Vite", "HTML"],
+      githubUrl: "https://github.com/Legion345/sababanights-website",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 4
     },
-     {
+   /* {
       _id: "5",
-      title: "placeholder",
-      image: movieAppImage,
-      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
-      githubUrl: "https://github.com/Legion345/movie_app",
+      title: "arduino car",
+      image: "placeholder",
+      description: "placeholder",
+      technologies: ["C++", "Makefile", "Arduino UNO"],
+      githubUrl: "https://github.com/Legion345/arduino-car",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 5
     },
-     {
+    {
       _id: "6",
-      title: "placeholder",
-      image: movieAppImage,
-      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
-      githubUrl: "https://github.com/Legion345/movie_app",
+      title: "text based adventure",
+      image: "placeholder",
+      description: "placeholder",
+      technologies: ["Java"],
+      githubUrl: "https://github.com/Legion345/Text-based-adventure",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 6
     },
-
-   {
+    {
       _id: "7",
-      title: "placeholder",
-      image: movieAppImage,
-      description: "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
-      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Appwrite", "Vite"],
+      title: "Sobriety Seven",
+      image: "placeholder",
+      description: "placeholder",
+      technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Clerk", "Arcjet", "Cloudinary", "MongoDB"],
       githubUrl: "https://github.com/Legion345/movie_app",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 7
     },
-
+    {
+      _id: "8",
+      title: "2D Adventure Game",
+      image: "placeholder",
+      description: "placeholder",
+      technologies: ["Java", "Gradle", "GIMP"],
+      githubUrl: "https://github.com/Legion345/2dAdventure",
+      // liveUrl: "https://weather-demo.com",
+      featured: false,
+      order: 8 
+    },*/
   ];
 
   const displayProjects = myProjects;
+
+  const isLargeCard = (index: number): boolean => {
+    // Large cards are at indices 3, 6, 9, etc. (every 3rd card after first 3)
+    if (index < 3) return false;
+    const positionAfterFirstRow = index - 3;
+    return positionAfterFirstRow % 3 === 0;
+  };
+
+  const getCardClasses = (index: number): string => {
+    // Mobile: all cards single column
+    let classes = "col-span-1";
+
+    // Tablet: all cards single column
+    classes += " md:col-span-1";
+
+    // Desktop: First row has 3 cards (each 2 cols), then asymmetric layout
+    if (index < 3) {
+      // First 3 cards: span 2 columns each (2+2+2 = 6 columns total = 3 cards)
+      classes += " lg:col-span-2";
+    } else {
+      // After first 3: large cards span 4 columns (2/3 width), normal cards span 2 columns (1/3 width)
+      const isLarge = isLargeCard(index);
+      classes += isLarge ? " lg:col-span-4" : " lg:col-span-2";
+    }
+
+    return classes;
+  };
 
   return (
     <section id="projects" className="py-20 bg-white">
@@ -98,36 +135,41 @@ export function Projects() {
         </div>
 
        
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {displayProjects.map((project) => (
-          <div key={project._id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        {displayProjects.map((project, index) => {
+          const isLarge = isLargeCard(index);
+          return (
+          <div
+            key={project._id}
+            className={`${getCardClasses(index)} bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow`}
+          >
             {/*  Image section */}
             {project.image ? (
               <img
                 src={project.image}
                 alt={`Screenshot or thumbnail for ${project.title}`}
-                className={`w-full h-48 ${project._id === "2" ? "object-contain bg-gray-50" : "object-cover"} `}
+                className={`w-full ${isLarge ? 'lg:h-72' : 'h-48'} ${project._id === "2" ? "object-contain bg-gray-50" : "object-cover"} `}
               />
             ) : (
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+              <div className={`${isLarge ? 'lg:h-72' : 'h-48'} bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center`}>
                 <div className="text-white text-7xl font-bold opacity-20">
                   {project.title.charAt(0)}
                 </div>
               </div>
-            )}              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            )}
+              <div className={isLarge ? 'lg:p-4 p-6' : 'p-6'}>
+                <h3 className={`${isLarge ? 'lg:text-lg' : 'text-xl'} font-semibold text-gray-900 mb-2`}>
                   {project.title}
                 </h3>
-                
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+
+                <p className={`text-gray-600 mb-4 ${isLarge ? 'lg:text-xs lg:leading-snug' : 'text-sm'} leading-relaxed`}>
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
+                  {project.technologies.map((tech, techIndex) => (
                     <span
-                      key={index}
+                      key={techIndex}
                       className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
                     >
                       {tech}
@@ -163,7 +205,8 @@ export function Projects() {
                 </div>
               </div>
             </div>
-          ))}
+          );
+        })}
         </div>
       </div>
     </section>
