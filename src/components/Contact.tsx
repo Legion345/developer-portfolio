@@ -118,7 +118,7 @@ export function Contact() {
               <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <button
                   type="button"
-                  onClick={() => window.open('https://calendly.com/harelasaraf/60-minute-meeting', '_blank')}
+                  onClick={() => window.open('https://calendly.com/harel-harelasaraf/30min', '_blank')}
                   className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
                 >
                   Book a Call

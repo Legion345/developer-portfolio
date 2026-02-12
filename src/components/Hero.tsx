@@ -1,4 +1,4 @@
-import harelImage from '@/assets/images/harel.jpg'
+import harelImage from '@/assets/icons/harel.jpg'
 
 export function Hero() {
   return (
