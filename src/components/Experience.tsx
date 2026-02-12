@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import streetSoundImage from '@/assets/images/street-sound-society.png'
-import sobrietySevenImage from '@/assets/images/sobriety-seven.png'
-import harelImage from '@/assets/images/harel.jpg'
+import streetSoundImage from '@/assets/icons/street-sound-society.png'
+import sobrietySevenImage from '@/assets/icons/sobriety-seven.png'
+import harelImage from '@/assets/icons/harel.jpg'
 
 export function Experience() {
   // Work experience section with accordion functionality

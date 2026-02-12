@@ -2,6 +2,10 @@ import restapiImage from '@/assets/images/restapi.png'
 import settlingScoresImage from '@/assets/images/settling-scores.png'
 import movieAppImage from '@/assets/images/movie-app.png'
 import sababaNightsImage from '@/assets/images/sababanights.png'
+import textBasedAdventureImage from '@/assets/images/text-based-adventure.png'
+import westernImage from '@/assets/images/2dwestern.png'
+import sobrietySevenImage from '@/assets/images/sobriety-seven.png'
+import arduinoCarImage from '@/assets/images/arduino-car.png'
 
 export function Projects() {
   // Projects data for demonstration
@@ -43,18 +47,18 @@ export function Projects() {
       _id: "4",
       title: "Sababa Nights Dancing - Web Development",
       image: sababaNightsImage,
-      description: "Sababa Nights Dancing mixes styles of Israeli Dancing and many other popular styles of dancing with creativity. It goes one step further with a team that is passionate that implements a feeling of community from the services provided. Connectivity at work from session locations and event planning with a people-centred focus.",
+      description: "Sababa Nights Dancing blends Israeli dance with a range of popular dance styles, brought to life through creative instruction and programming. This passionate team goes beyond teaching steps—building a strong sense of community through sessions, thoughtfully chosen choreography, and people-centered event planning that helps participants connect on and off the dance floor.",
       technologies: ["TypeScript", "JavaScript", "React", "Tailwind CSS", "Vite", "HTML"],
       githubUrl: "https://github.com/Legion345/sababanights-website",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 4
     },
-   /* {
+    {
       _id: "5",
-      title: "arduino car",
-      image: "placeholder",
-      description: "placeholder",
+      title: "Arduino Car - (Peronsal project)",
+      image: arduinoCarImage,
+      description: "Designed and built an Arduino Uno–based obstacle-avoiding robot that autonomously detects objects in its path, stops and reverses to create clearance, scans left and right to assess distances, and dynamically turns toward the direction with the most open space for efficient navigation.",
       technologies: ["C++", "Makefile", "Arduino UNO"],
       githubUrl: "https://github.com/Legion345/arduino-car",
       // liveUrl: "https://weather-demo.com",
@@ -63,9 +67,9 @@ export function Projects() {
     },
     {
       _id: "6",
-      title: "text based adventure",
-      image: "placeholder",
-      description: "placeholder",
+      title: "Dungeon Crawler Prototype",
+      image: textBasedAdventureImage,
+      description: "A lightweight RPG prototype built in Java using standard library tools. The project focuses on clean, responsive command-line interaction and a reliable game-state loop, showing how core gameplay systems can be implemented without external frameworks.",
       technologies: ["Java"],
       githubUrl: "https://github.com/Legion345/Text-based-adventure",
       // liveUrl: "https://weather-demo.com",
@@ -74,9 +78,9 @@ export function Projects() {
     },
     {
       _id: "7",
-      title: "Sobriety Seven",
-      image: "placeholder",
-      description: "placeholder",
+      title: "Sobriety Seven - Mobile",
+      image: sobrietySevenImage,
+      description: "A transformative social training platform helping women rethink alcohol from the ground up. Through guided coursework, community support, and practical behavior-change tools, members build clarity, confidence, and sustainable new habits.",
       technologies: ["TypeScript", "React Native", "Expo", "Tailwind CSS", "Clerk", "Arcjet", "Cloudinary", "MongoDB"],
       githubUrl: "https://github.com/Legion345/movie_app",
       // liveUrl: "https://weather-demo.com",
@@ -85,15 +89,15 @@ export function Projects() {
     },
     {
       _id: "8",
-      title: "2D Adventure Game",
-      image: "placeholder",
-      description: "placeholder",
+      title: "2D Adventure Game - (Personal project)",
+      image: westernImage,
+      description: "A Java-based western adventure game featuring a custom 60 FPS game loop, sprite-based animations, and WASD character controls. Built with Java Swing and Gradle, implementing an entity-component architecture with double-buffered rendering for smooth gameplay. Demonstrates core game development principles including delta-time synchronization, event-driven input handling, and efficient resource management",
       technologies: ["Java", "Gradle", "GIMP"],
       githubUrl: "https://github.com/Legion345/2dAdventure",
       // liveUrl: "https://weather-demo.com",
       featured: false,
       order: 8 
-    },*/
+    },
   ];
 
   const displayProjects = myProjects;
