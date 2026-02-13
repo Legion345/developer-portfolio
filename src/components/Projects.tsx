@@ -50,13 +50,13 @@ export function Projects() {
       description: "Sababa Nights Dancing blends Israeli dance with a range of popular dance styles, brought to life through creative instruction and programming. This passionate team goes beyond teaching steps—building a strong sense of community through sessions, thoughtfully chosen choreography, and people-centered event planning that helps participants connect on and off the dance floor.",
       technologies: ["TypeScript", "JavaScript", "React", "Tailwind CSS", "Vite", "HTML"],
       githubUrl: "https://github.com/Legion345/sababanights-website",
-      // liveUrl: "https://weather-demo.com",
+      liveUrl: "https://www.sababanights.com",
       featured: false,
       order: 4
     },
     {
       _id: "5",
-      title: "Arduino Car - (Peronsal project)",
+      title: "Arduino Car - (Personal project)",
       image: arduinoCarImage,
       description: "Designed and built an Arduino Uno–based obstacle-avoiding robot that autonomously detects objects in its path, stops and reverses to create clearance, scans left and right to assess distances, and dynamically turns toward the direction with the most open space for efficient navigation.",
       technologies: ["C++", "Makefile", "Arduino UNO"],
