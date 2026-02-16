@@ -1,5 +1,5 @@
-import restapiImage from '@/assets/images/restapi.png'
-import settlingScoresImage from '@/assets/images/settling-scores.png'
+import restapiImage from '@/assets/images/restapi-image.png'
+import settlingScoresImage from '@/assets/images/settlingscores.png'
 import movieAppImage from '@/assets/images/movie-app.png'
 import sababaNightsImage from '@/assets/images/sababanights.png'
 import textBasedAdventureImage from '@/assets/images/text-based-adventure.png'
@@ -152,10 +152,18 @@ export function Projects() {
               <img
                 src={project.image}
                 alt={`Screenshot or thumbnail for ${project.title}`}
-                className={`w-full ${isLarge ? 'lg:h-72' : 'h-48'} ${project._id === "2" ? "object-contain bg-gray-50" : "object-cover"} `}
+                className={`w-full ${
+                  isLarge
+                    ? 'aspect-[4/3] lg:aspect-[3/2]'
+                    : 'aspect-[4/3]'
+                } object-cover`}
               />
             ) : (
-              <div className={`${isLarge ? 'lg:h-72' : 'h-48'} bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center`}>
+              <div className={`${
+                  isLarge
+                    ? 'aspect-[4/3] lg:aspect-[3/2]'
+                    : 'aspect-[4/3]'
+                } bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center`}>
                 <div className="text-white text-7xl font-bold opacity-20">
                   {project.title.charAt(0)}
                 </div>
