@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 export function WelcomeSlide() {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isSliding, setIsSliding] = useState(false);
+  const [isTextHit, setIsTextHit] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export function WelcomeSlide() {
     // Show text after 1 second
     const textTimer = setTimeout(() => {
       setIsTextVisible(true);
-    }, 1000);
+    }, 300);
 
     // Start slide-up animation after 3 seconds (1s delay + 2s display)
     const slideTimer = setTimeout(() => {
