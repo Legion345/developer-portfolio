@@ -9,6 +9,7 @@ export default {
           hover: "#1d4ed8",
         },
         secondary: "#64748b",
+        'royal-blue': '#4169e1',
       },
       spacing: {
         section: "2rem",
