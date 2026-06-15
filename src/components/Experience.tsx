@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import streetSoundImage from '@/assets/icons/street-sound-society.png'
-import sobrietySevenImage from '@/assets/icons/sobriety-seven.png'
-import harelImage from '@/assets/icons/harel.jpg'
+import { useState } from "react";
+import streetSoundImage from "@/assets/icons/street-sound-society.png";
+import sobrietySevenImage from "@/assets/icons/sobriety-seven.png";
+import harelImage from "@/assets/icons/harel.jpg";
 
 export function Experience() {
   // Work experience section with accordion functionality
@@ -12,31 +12,63 @@ export function Experience() {
       company: "Sobriety Seven, Inc",
       position: "Full-Stack Engineer",
       startDate: "2025-06",
-      endDate: undefined,
-      description: "Built scalable app architecture and databases for 10+ features, developed responsive real-time social media frontends, secured backends with API rate limiting, integrated Clerk for seamless authentication, and optimized queries for faster profile and feed loads.",
-      technologies: ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Tailwind CSS"], 
+      endDate: "2026-06",
+      description:
+        "Built scalable app architecture and databases for 10+ features, developed responsive real-time social media frontends, secured backends with API rate limiting, integrated Clerk for seamless authentication, and optimized queries for faster profile and feed loads.",
+      technologies: [
+        "React",
+        "React Native",
+        "Node.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+      ],
       logo: sobrietySevenImage,
-      order: 1 }, 
-    { _id: "2",
+      order: 1,
+    },
+    {
+      _id: "2",
       company: "Street Sound Society",
       position: "Embedded Systems Engineer",
       startDate: "2025-01",
       endDate: "2025-06",
-      description: "Developed C++ code for a relay ensuring proper activation and hardware integration, troubleshot and resolved voltage conversion issues for reliable retractable microphone operation in real-time applications, and conducted QA testing to identify and fix functionality issues enhancing system reliability and performance.",
+      description:
+        "Developed C++ code for a relay ensuring proper activation and hardware integration, troubleshot and resolved voltage conversion issues for reliable retractable microphone operation in real-time applications, and conducted QA testing to identify and fix functionality issues enhancing system reliability and performance.",
       technologies: ["Arduino", "C++", "Microprocessors"],
       logo: streetSoundImage,
-      order: 2
+      order: 2,
     },
     {
       _id: "3",
-      company: "Freelance",
-      position: "Software Engineer",
+      company: "",
+      position: "Software Engineer Intern",
       startDate: "2023-01",
-      endDate: "2025-01",
-      description: "Collaborated with a senior developer/founder to create solutions in their startup on hardware component reliability.",
+      endDate: "2025-05",
+      description:
+        "Collaborated with a senior developer/founder to create solutions in their startup on hardware component reliability.",
       technologies: ["C++", "Makefile", "Arduino"],
       logo: harelImage,
-      order: 3
+      order: 3,
+    },
+    {
+      _id: "4",
+      company: "Freelance",
+      position: "Web Developer",
+      startDate: "2024-02",
+      endDate: undefined,
+      description:
+        " Web developer specializing in Front-end (React, Node.js) technologies with a 100% job success rate and client satisfaction rating (based on 50+ Jobs, 500+ hours).",
+      technologies: [
+        "React",
+        "React Native",
+        "Node.js",
+        "TypeScript",
+        "JavaScript",
+        "Tailwind CSS",
+        "Vite",
+      ],
+      logo: undefined,
+      order: 4,
     },
   ];
 
@@ -85,9 +117,12 @@ export function Experience() {
   );
 
   const formatDate = (dateString: string) => {
-    const [year, month] = dateString.split('-');
+    const [year, month] = dateString.split("-");
     const date = new Date(parseInt(year), parseInt(month) - 1);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+    });
   };
 
   return (
@@ -106,12 +141,17 @@ export function Experience() {
           {displayExperience
             .sort((a, b) => a.order - b.order)
             .map((exp, index) => (
-              <div key={exp._id} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div
+                key={exp._id}
+                className={`relative flex items-center mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
                 {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
 
                 {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                <div
+                  className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}
+                >
                   <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                     <div className="mb-4">
                       <div className="flex items-start justify-between mb-2">
@@ -135,22 +175,35 @@ export function Experience() {
                         <button
                           onClick={() => toggleExpanded(exp._id)}
                           className="ml-3 p-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-full transition-all duration-300 flex-shrink-0"
-                          aria-label={expandedId === exp._id ? "Collapse description" : "Expand description"}
+                          aria-label={
+                            expandedId === exp._id
+                              ? "Collapse description"
+                              : "Expand description"
+                          }
                           aria-expanded={expandedId === exp._id}
                         >
-                          <div className={`transition-transform duration-300 ${expandedId === exp._id ? 'rotate-180' : 'rotate-0'}`}>
-                            {expandedId === exp._id ? <MinusIcon /> : <PlusIcon />}
+                          <div
+                            className={`transition-transform duration-300 ${expandedId === exp._id ? "rotate-180" : "rotate-0"}`}
+                          >
+                            {expandedId === exp._id ? (
+                              <MinusIcon />
+                            ) : (
+                              <PlusIcon />
+                            )}
                           </div>
                         </button>
                       </div>
                       <p className="text-sm text-gray-500">
-                        {formatDate(exp.startDate)} - {exp.endDate ? formatDate(exp.endDate) : 'Present'}
+                        {formatDate(exp.startDate)} -{" "}
+                        {exp.endDate ? formatDate(exp.endDate) : "Present"}
                       </p>
                     </div>
 
                     <div
                       className={`grid transition-all duration-300 ease-in-out ${
-                        expandedId === exp._id ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                        expandedId === exp._id
+                          ? "grid-rows-[1fr]"
+                          : "grid-rows-[0fr]"
                       }`}
                     >
                       <div className="overflow-hidden">
@@ -178,5 +231,3 @@ export function Experience() {
     </section>
   );
 }
-
-
