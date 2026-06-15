@@ -31,7 +31,7 @@ export function Contact() {
         toast.success("Thanks! Your message has been sent — I'll get back to you soon.");
         setFormData({ name: '', email: '', message: '' });
       } else {
-        toast.error(data.message || "Something went wrong. Please try again.");
+        toast.error("Something went wrong sending your message. Please try again, or email me directly at harel@harelasaraf.com.");
       }
     } catch (error) {
       // Never swallow the failure silently — log for diagnosis and tell the user.
