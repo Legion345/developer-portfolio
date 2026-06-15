@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { toast } from "sonner";
+
+// Public Web3Forms key — safe to commit. It only ever delivers to the email
+// it was registered to, and Vite inlines env vars into the bundle anyway.
+const WEB3FORMS_ACCESS_KEY = "367321bc-36ca-4774-a1bd-a6814af56e19";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -6,13 +11,35 @@ export function Contact() {
     email: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setSubmitting(true);
+
+    const payload = new FormData(e.currentTarget);
+    payload.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast.success("Thanks! Your message has been sent — I'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      // Never swallow the failure silently — log for diagnosis and tell the user.
+      console.error("Web3Forms submission failed:", error);
+      toast.error("Couldn't send your message. Please email me directly at harel@harelasaraf.com.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -72,6 +99,16 @@ export function Contact() {
           {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot: bots fill this hidden field; Web3Forms then drops the message. */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Name
@@ -129,17 +166,11 @@ export function Contact() {
                   Book a Call
                 </button>
                 <button
-                  type="button"
-                  onClick={() => {
-                    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name || 'Visitor'}`);
-                    const body = encodeURIComponent(
-                      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-                    );
-                    window.location.href = `mailto:harel@harelasaraf.com?subject=${subject}&body=${body}`;
-                  }}
-                  className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                  type="submit"
+                  disabled={submitting}
+                  className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Email Me
+                  {submitting ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
