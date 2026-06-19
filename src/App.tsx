@@ -7,8 +7,11 @@ import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { WelcomeSlide } from "./components/WelcomeSlide";
 import { Toaster } from "sonner";
+import { useScrollToHash } from "./hooks/useScrollToHash";
 
 export default function App() {
+  useScrollToHash();
+
   return (
     <>
       <WelcomeSlide />
