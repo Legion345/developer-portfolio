@@ -1,12 +1,21 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      // Already on the landing page — smooth-scroll in place.
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView?.({ behavior: "smooth" });
+    } else {
+      // On another route (e.g. a project page) — go home, then the landing
+      // page scrolls to the section via the hash.
+      navigate(`/#${sectionId}`);
     }
     setIsMenuOpen(false);
   };
