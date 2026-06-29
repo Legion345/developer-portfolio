@@ -32,16 +32,17 @@ describe("ProjectDetail", () => {
   it("renders a live-site link pointing at the project's liveUrl when present", () => {
     renderAt("/projects/sababa-nights");
 
-    expect(
-      screen.getByRole("link", { name: /visit live site/i }),
-    ).toHaveAttribute("href", "https://www.sababanights.com");
+    expect(screen.getByRole("link", { name: /open project/i })).toHaveAttribute(
+      "href",
+      "https://www.sababanights.com",
+    );
   });
 
   it("omits the live-site link when the project has no liveUrl", () => {
     renderAt("/projects/sovrn-coaching");
 
     expect(
-      screen.queryByRole("link", { name: /visit live site/i }),
+      screen.queryByRole("link", { name: /open project/i }),
     ).not.toBeInTheDocument();
   });
 
