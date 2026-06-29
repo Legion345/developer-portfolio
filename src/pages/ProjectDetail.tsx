@@ -91,7 +91,7 @@ export function ProjectDetail() {
               className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
             >
               <ExternalLinkIcon className="w-5 h-5" />
-              Visit live site
+              Open Project
             </a>
           )}
         </div>

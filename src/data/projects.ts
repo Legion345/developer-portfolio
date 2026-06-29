@@ -28,9 +28,10 @@ export const projects: Project[] = [
     title: "SOVRN Coaching",
     category: "Web Development",
     image: sovrnCoaching,
-    description: "Web Development",
+    description: "Web Development abc, 123, abc-123",
     technologies: ["Java", "Spring Boot", "Gradle"],
     githubUrl: "https://github.com/Legion345/springboot-restapi",
+    liveurl: undefined,
   },
   {
     id: "2",
@@ -67,7 +68,7 @@ export const projects: Project[] = [
     category: "Web Development",
     image: sababaNightsImage,
     description:
-      "Sababa Nights Dancing blends Israeli dance with a range of popular dance styles, brought to life through creative instruction and programming. This passionate team goes beyond teaching steps—building a strong sense of community through sessions, thoughtfully chosen choreography, and people-centered event planning that helps participants connect on and off the dance floor.",
+      "Sababa Nights brings dancers together through a vibrant mix of Israeli and popular styles. It unlocks a unique dance experience built on creative choreography, intentional community, and events that keep people coming back",
     technologies: [
       "TypeScript",
       "JavaScript",
@@ -76,7 +77,6 @@ export const projects: Project[] = [
       "Vite",
       "HTML",
     ],
-    githubUrl: "https://github.com/Legion345/sababanights-website",
     liveUrl: "https://www.sababanights.com",
   },
   {
