@@ -28,10 +28,10 @@ export const projects: Project[] = [
     title: "SOVRN Coaching",
     category: "Web Development",
     image: sovrnCoaching,
-    description: "Web Development abc, 123, abc-123",
+    description:
+      "SOVRN Coaching is a business and personal development coaching program founded by Sabastian. Built off the back of a highly successful telecom sales career, SOVRN offers enrollment into a coaching program that includes biweekly coaching calls, live Q&As, a private community, in-person events, and access to Sabastian's personal business blueprint. It's designed for entrepreneurs and salespeople looking to level up their mindset and grow their business",
     technologies: ["Java", "Spring Boot", "Gradle"],
-    githubUrl: "https://github.com/Legion345/springboot-restapi",
-    liveurl: undefined,
+    liveUrl: undefined,
   },
   {
     id: "2",
@@ -39,9 +39,10 @@ export const projects: Project[] = [
     title: "Contractor Hero",
     category: "Web Development",
     image: contractorHero,
-    description: "Web Development",
+    description:
+      "Contractor Hero is a licensed general building contractor based in Sacramento, California. With a commitment to quality craftsmanship and dependable service, they take on a wide range of construction projects for both homeowners and businesses across the state — bringing professionalism and expertise to every job they touch.",
     technologies: ["Java", "Postman", "Spring Boot", "Gradle"],
-    githubUrl: "https://github.com/Legion345/settling-scores/tree/master",
+    liveUrl: undefined,
   },
   {
     id: "3",
@@ -64,7 +65,7 @@ export const projects: Project[] = [
   {
     id: "4",
     slug: "sababa-nights",
-    title: "Sababa Nights Dancing - Web Development",
+    title: "Sababa Nights Dancing",
     category: "Web Development",
     image: sababaNightsImage,
     description:
