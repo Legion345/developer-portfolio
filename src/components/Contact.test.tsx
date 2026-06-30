@@ -82,7 +82,9 @@ describe("Contact form", () => {
     const fetchMock = vi.fn().mockRejectedValue(new Error("Network down"));
     vi.stubGlobal("fetch", fetchMock);
     // Silence the expected console.error from the catch block.
-    const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+    const consoleError = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => {});
 
     const user = await fillForm();
     await user.click(screen.getByRole("button", { name: /send message/i }));
@@ -96,9 +98,10 @@ describe("Contact form", () => {
     render(<Contact />);
     let resolveFetch!: (value: unknown) => void;
     const fetchMock = vi.fn(
-      () => new Promise((resolve) => {
-        resolveFetch = resolve;
-      }),
+      () =>
+        new Promise((resolve) => {
+          resolveFetch = resolve;
+        }),
     );
     vi.stubGlobal("fetch", fetchMock);
 
@@ -112,7 +115,9 @@ describe("Contact form", () => {
     // Let it finish so the test ends cleanly.
     resolveFetch({ ok: true, json: async () => ({ success: true }) });
     await waitFor(() =>
-      expect(screen.getByRole("button", { name: /send message/i })).toBeEnabled(),
+      expect(
+        screen.getByRole("button", { name: /send message/i }),
+      ).toBeEnabled(),
     );
   });
 
@@ -121,5 +126,15 @@ describe("Contact form", () => {
     const honeypot = container.querySelector('input[name="botcheck"]');
     expect(honeypot).toBeInTheDocument();
     expect(honeypot).not.toBeVisible();
+  });
+});
+
+describe("Contact info", () => {
+  it("renders a mailto link for the email address", () => {
+    render(<Contact />);
+
+    expect(
+      screen.getByRole("link", { name: /harel@harelasaraf\.com/i }),
+    ).toHaveAttribute("href", "mailto:harel@harelasaraf.com");
   });
 });

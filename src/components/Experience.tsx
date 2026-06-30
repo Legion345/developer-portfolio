@@ -30,7 +30,7 @@ export function Experience() {
       _id: "2",
       company: "Street Sound Society",
       position: "Embedded Systems Engineer",
-      startDate: "2025-01",
+      startDate: "2024-04",
       endDate: "2025-06",
       description:
         "Developed C++ code for a relay ensuring proper activation and hardware integration, troubleshot and resolved voltage conversion issues for reliable retractable microphone operation in real-time applications, and conducted QA testing to identify and fix functionality issues enhancing system reliability and performance.",
@@ -43,7 +43,7 @@ export function Experience() {
       company: "",
       position: "Software Engineer Intern",
       startDate: "2023-01",
-      endDate: "2025-05",
+      endDate: "2024-02",
       description:
         "Collaborated with a senior developer/founder to create solutions in their startup on hardware component reliability.",
       technologies: ["C++", "Makefile", "Arduino"],

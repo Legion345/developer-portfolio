@@ -47,11 +47,11 @@ describe("ProjectDetail", () => {
   });
 
   it("renders a GitHub link pointing at the project's githubUrl", () => {
-    renderAt("/projects/sovrn-coaching");
+    renderAt("/projects/arduino-car");
 
     expect(screen.getByRole("link", { name: /github/i })).toHaveAttribute(
       "href",
-      "https://github.com/Legion345/springboot-restapi",
+      "https://github.com/Legion345/arduino-car",
     );
   });
 
