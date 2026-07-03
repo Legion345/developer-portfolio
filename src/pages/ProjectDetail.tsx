@@ -35,19 +35,15 @@ export function ProjectDetail() {
     );
   }
 
+  const galleryImages = [project.image, ...(project.images ?? [])];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
         <div className="mb-8">
           <BackToProjects />
         </div>
-
-        <img
-          src={project.image}
-          alt={`Screenshot or thumbnail for ${project.title}`}
-          className="w-full aspect-[16/9] object-cover rounded-lg shadow-lg mb-8"
-        />
 
         <p className="text-sm font-medium text-blue-600 mb-2">
           {project.category}
@@ -94,6 +90,17 @@ export function ProjectDetail() {
               Open Project
             </a>
           )}
+        </div>
+
+        <div className="flex flex-col gap-4 mt-8">
+          {galleryImages.map((src, index) => (
+            <img
+              key={`${index}-${src}`}
+              src={src}
+              alt={`${project.title} screenshot ${index + 1}`}
+              className="w-full aspect-[16/9] object-cover rounded-lg shadow-lg"
+            />
+          ))}
         </div>
       </main>
     </div>

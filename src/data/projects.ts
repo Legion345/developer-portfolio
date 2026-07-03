@@ -1,11 +1,24 @@
-import sovrnCoaching from "@/assets/images/sovrn-project.png";
-import contractorHero from "@/assets/images/contractor-hero-project.png";
-import movieAppImage from "@/assets/images/movie-app.png";
+import sovrnCoaching from "@/assets/images/sovrn-coaching-dir/sovrn-project.png";
+import sovrnPhilosophy from "@/assets/images/sovrn-coaching-dir/sovrn-philosophy.png";
+import sovrnBlueprint from "@/assets/images/sovrn-coaching-dir/sovrn-blueprint.png";
+import sovrnTestimonials from "@/assets/images/sovrn-coaching-dir/sovrn-testimonials.png";
+import sovrnEnrollment from "@/assets/images/sovrn-coaching-dir/sovrn-enrollment.png";
+import contractorHero from "@/assets/images/contractor-hero-dir/contractor-hero-project.png";
+import contractorHeroServices from "@/assets/images/contractor-hero-dir/contractor-hero-services.png";
+import contractorHeroWhy from "@/assets/images/contractor-hero-dir/contractor-hero-why.png";
+import contractorHeroWhere from "@/assets/images/contractor-hero-dir/contractor-hero-where.png";
+import contractorHeroFAQ from "@/assets/images/contractor-hero-dir/contractor-hero-faq.png";
+import contractorHeroContact from "@/assets/images/contractor-hero-dir/contractor-hero-contact.png";
+import moonrayinteriors from "@/assets/images/moon-ray-dir/moon-ray-interiors.png";
+import moonrayservices from "@/assets/images/moon-ray-dir/moon-ray-services.png";
+import moonrayportfolio from "@/assets/images/moon-ray-dir/moon-ray-portfolio.png";
+import moonrayabout from "@/assets/images/moon-ray-dir/moon-ray-about.png";
 import sababaNightsImage from "@/assets/images/sababanights.png";
 import textBasedAdventureImage from "@/assets/images/text-based-adventure.png";
 import westernImage from "@/assets/images/2dwestern.png";
 import sobrietySevenImage from "@/assets/images/sobriety-seven.png";
 import arduinoCarImage from "@/assets/images/arduino-car.png";
+import placeholder from "@/assets/images/placeholder.svg";
 
 export type Project = {
   id: string;
@@ -15,6 +28,8 @@ export type Project = {
   /** Short label shown on the landing card (slides away to reveal "Show project"). */
   category: string;
   image: string;
+  /** Additional gallery images shown on the detail page, after the primary `image`. */
+  images?: string[];
   description: string;
   technologies: string[];
   githubUrl?: string;
@@ -28,6 +43,12 @@ export const projects: Project[] = [
     title: "SOVRN Coaching",
     category: "Web Development",
     image: sovrnCoaching,
+    images: [
+      sovrnPhilosophy,
+      sovrnBlueprint,
+      sovrnTestimonials,
+      sovrnEnrollment,
+    ],
     description:
       "SOVRN Coaching is a business and personal development coaching program founded by Sabastian. Built off the back of a highly successful telecom sales career, SOVRN offers enrollment into a coaching program that includes biweekly coaching calls, live Q&As, a private community, in-person events, and access to Sabastian's personal business blueprint. It's designed for entrepreneurs and salespeople looking to level up their mindset and grow their business",
     technologies: ["Java", "Spring Boot", "Gradle"],
@@ -39,19 +60,27 @@ export const projects: Project[] = [
     title: "Contractor Hero",
     category: "Web Development",
     image: contractorHero,
+    images: [
+      contractorHeroServices,
+      contractorHeroWhy,
+      contractorHeroWhere,
+      contractorHeroFAQ,
+      contractorHeroContact,
+    ],
     description:
       "Contractor Hero is a licensed general building contractor based in Sacramento, California. With a commitment to quality craftsmanship and dependable service, they take on a wide range of construction projects for both homeowners and businesses across the state — bringing professionalism and expertise to every job they touch.",
     technologies: ["Java", "Postman", "Spring Boot", "Gradle"],
-    liveUrl: undefined,
+    liveUrl: "https://www.contractorhero.com",
   },
   {
     id: "3",
-    slug: "movie-app",
-    title: "Movie App - Mobile",
-    category: "Mobile App",
-    image: movieAppImage,
+    slug: "moon-ray-interiors",
+    title: "Moon Ray Interiors",
+    category: "Web Development",
+    image: moonrayinteriors,
+    images: [moonrayservices, moonrayportfolio, moonrayabout],
     description:
-      "The app allows users to browse trending movies, search through thousands of titles, and track search analytics in real-time, providing an engaging way to discover and explore the world of cinema.",
+      "Moon Ray Interiors is a California-based interior design studio known for crafting serene, sunlit spaces that balance modern simplicity with organic warmth. From full home transformations to single-room refreshes, they bring a curated eye and a collaborative approach to every project, helping clients turn their space into a true reflection of how they want to live.",
     technologies: [
       "TypeScript",
       "React Native",
@@ -60,7 +89,7 @@ export const projects: Project[] = [
       "Appwrite",
       "Vite",
     ],
-    githubUrl: "https://github.com/Legion345/movie_app",
+    liveUrl: "https://www.moonrayinteriors.com",
   },
   {
     id: "4",
@@ -68,6 +97,7 @@ export const projects: Project[] = [
     title: "Sababa Nights Dancing",
     category: "Web Development",
     image: sababaNightsImage,
+    images: [placeholder, placeholder],
     description:
       "Sababa Nights brings dancers together through a vibrant mix of Israeli and popular styles. It unlocks a unique dance experience built on creative choreography, intentional community, and events that keep people coming back",
     technologies: [
@@ -86,6 +116,7 @@ export const projects: Project[] = [
     title: "Arduino Car - (Personal project)",
     category: "Hardware / IoT",
     image: arduinoCarImage,
+    images: [placeholder, placeholder],
     description:
       "Designed and built an Arduino Uno–based obstacle-avoiding robot that autonomously detects objects in its path, stops and reverses to create clearance, scans left and right to assess distances, and dynamically turns toward the direction with the most open space for efficient navigation.",
     technologies: ["C++", "Makefile", "Arduino UNO"],
@@ -97,6 +128,7 @@ export const projects: Project[] = [
     title: "Dungeon Crawler Prototype",
     category: "Game",
     image: textBasedAdventureImage,
+    images: [placeholder, placeholder],
     description:
       "A lightweight RPG prototype built in Java using standard library tools. The project focuses on clean, responsive command-line interaction and a reliable game-state loop, showing how core gameplay systems can be implemented without external frameworks.",
     technologies: ["Java"],
@@ -105,9 +137,10 @@ export const projects: Project[] = [
   {
     id: "7",
     slug: "sobriety-seven",
-    title: "Sobriety Seven - Mobile",
+    title: "Sobriety Seven",
     category: "Mobile App",
     image: sobrietySevenImage,
+    images: [placeholder, placeholder],
     description:
       "A transformative social training platform helping women rethink alcohol from the ground up. Through guided coursework, community support, and practical behavior-change tools, members build clarity, confidence, and sustainable new habits.",
     technologies: [
@@ -128,6 +161,7 @@ export const projects: Project[] = [
     title: "2D Adventure Game - (Personal project)",
     category: "Game",
     image: westernImage,
+    images: [placeholder, placeholder],
     description:
       "A Java-based western adventure game featuring a custom 60 FPS game loop, sprite-based animations, and WASD character controls. Built with Java Swing and Gradle, implementing an entity-component architecture with double-buffered rendering for smooth gameplay. Demonstrates core game development principles including delta-time synchronization, event-driven input handling, and efficient resource management",
     technologies: ["Java", "Gradle", "GIMP"],
