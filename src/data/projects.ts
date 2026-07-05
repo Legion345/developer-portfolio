@@ -51,7 +51,14 @@ export const projects: Project[] = [
     ],
     description:
       "SOVRN Coaching is a business and personal development coaching program founded by Sabastian. Built off the back of a highly successful telecom sales career, SOVRN offers enrollment into a coaching program that includes biweekly coaching calls, live Q&As, a private community, in-person events, and access to Sabastian's personal business blueprint. It's designed for entrepreneurs and salespeople looking to level up their mindset and grow their business",
-    technologies: ["Java", "Spring Boot", "Gradle"],
+    technologies: [
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "Tailwind CSS",
+      "Appwrite",
+      "Vite",
+    ],
     liveUrl: undefined,
   },
   {
@@ -69,8 +76,15 @@ export const projects: Project[] = [
     ],
     description:
       "Contractor Hero is a licensed general building contractor based in Sacramento, California. With a commitment to quality craftsmanship and dependable service, they take on a wide range of construction projects for both homeowners and businesses across the state — bringing professionalism and expertise to every job they touch.",
-    technologies: ["Java", "Postman", "Spring Boot", "Gradle"],
-    liveUrl: "https://www.contractorhero.com",
+    technologies: [
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "Tailwind CSS",
+      "Appwrite",
+      "Vite",
+    ],
+    liveUrl: undefined,
   },
   {
     id: "3",
