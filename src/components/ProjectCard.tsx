@@ -25,7 +25,7 @@ export function ProjectCard({
         alt={`Screenshot or thumbnail for ${project.title}`}
         className={`w-full ${
           isLarge ? "aspect-[4/3] lg:aspect-[3/2]" : "aspect-[4/3]"
-        } object-cover`}
+        } object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none`}
       />
 
       <div className={`flex flex-1 flex-col ${isLarge ? "lg:p-4 p-5" : "p-5"}`}>
