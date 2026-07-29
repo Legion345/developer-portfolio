@@ -18,13 +18,14 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-9xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             HAREL ASARAF
           </h1>
 
-          <h2 className="text-xl md:text-3xl text-gray-600 mb-8">
-            SOFTWARE ENGINEER, FRONT END, & APP DEVELOPER
+          <h2 className="text-xl md:text-2xl text-gray-600 mb-8">
+            SOFTWARE ENGINEER, FRONT END & APP DEVELOPER.
           </h2>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() =>
