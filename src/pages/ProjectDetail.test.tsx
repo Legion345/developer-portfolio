@@ -168,40 +168,4 @@ describe("ProjectDetail", () => {
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
   });
-
-  it("renders the primary image plus each of the project's extra images", () => {
-    const project = projects[0];
-    renderAt(`/projects/${project.slug}`);
-
-    const expectedCount = 1 + (project.images?.length ?? 0);
-
-    expect(screen.getAllByRole("img")).toHaveLength(expectedCount);
-  });
-
-  it("renders the description above the images", () => {
-    const project = projects[0];
-    renderAt(`/projects/${project.slug}`);
-
-    const description = screen.getByText(project.description);
-    const firstImage = screen.getAllByRole("img")[0];
-
-    // DOCUMENT_POSITION_FOLLOWING (4) => the image appears after `description`.
-    expect(
-      description.compareDocumentPosition(firstImage) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-  });
-
-  it("renders the technologies and links above the images", () => {
-    renderAt("/projects/arduino-car");
-
-    const githubLink = screen.getByRole("link", { name: /github/i });
-    const firstImage = screen.getAllByRole("img")[0];
-
-    // The image gallery sits at the bottom, after the tech/links section.
-    expect(
-      githubLink.compareDocumentPosition(firstImage) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-  });
 });

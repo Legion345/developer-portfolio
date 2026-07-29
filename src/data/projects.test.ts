@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { projects, getProjectBySlug } from "./projects";
+import placeholder from "@/assets/images/placeholder.svg";
 
 describe("projects data", () => {
   it("gives every project a unique, non-empty slug", () => {
@@ -13,11 +14,13 @@ describe("projects data", () => {
     expect(projects.every((project) => project.category.length > 0)).toBe(true);
   });
 
-  // Guards the class of bug where a gallery renders blank or repeated boxes:
-  // sababa-nights and sobriety-seven each shipped `[placeholder, placeholder]`,
-  // rendering the real screenshot plus two identical grey placeholders. Collects
-  // every offender rather than asserting per-project, which would stop at the
-  // first one and hide the rest.
+  // Two invariants, both guarding galleries that render blank or repeated boxes:
+  // no entry may repeat, and none may be the shared placeholder standing in for a
+  // real screenshot. Compares against the imported asset rather than matching on
+  // filename — placeholder.svg is under Vite's `assetsInlineLimit`, so it resolves
+  // to a base64 data URI with the name erased, which made a substring check never
+  // fire. Collects every offender instead of asserting per-project, which would
+  // stop at the first one and hide the rest.
   it("gives every project a gallery of distinct, real images", () => {
     const problems = projects.flatMap((project) => {
       const gallery = [project.image, ...(project.images ?? [])];
@@ -26,7 +29,7 @@ describe("projects data", () => {
       if (new Set(gallery).size !== gallery.length) {
         issues.push(`${project.slug}: duplicate image in gallery`);
       }
-      if (gallery.some((src) => /placeholder/i.test(src))) {
+      if (gallery.includes(placeholder)) {
         issues.push(`${project.slug}: placeholder stands in for a real image`);
       }
 

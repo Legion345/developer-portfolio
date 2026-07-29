@@ -107,7 +107,6 @@ export const projects: Project[] = [
     title: "Sababa Nights Dancing",
     category: "Web Development",
     image: sababaNightsImage,
-    images: [placeholder, placeholder],
     description:
       "Sababa Nights brings dancers together through a vibrant mix of Israeli and popular styles. It unlocks a unique dance experience built on creative choreography, intentional community, and events that keep people coming back",
     technologies: [
@@ -126,7 +125,6 @@ export const projects: Project[] = [
     title: "Sobriety Seven",
     category: "Mobile App",
     image: sobrietySevenImage,
-    images: [placeholder, placeholder],
     description:
       "A transformative social training platform helping women rethink alcohol from the ground up. Through guided coursework, community support, and practical behavior-change tools, members build clarity, confidence, and sustainable new habits.",
     technologies: [
