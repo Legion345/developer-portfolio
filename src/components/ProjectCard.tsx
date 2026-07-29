@@ -20,13 +20,17 @@ export function ProjectCard({
       aria-label={`Show project: ${project.title}`}
       className={`group flex flex-col bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow ${className}`}
     >
-      <img
-        src={project.image}
-        alt={`Screenshot or thumbnail for ${project.title}`}
-        className={`w-full ${
+      <div
+        className={`w-full overflow-hidden ${
           isLarge ? "aspect-[4/3] lg:aspect-[3/2]" : "aspect-[4/3]"
-        } object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none`}
-      />
+        }`}
+      >
+        <img
+          src={project.image}
+          alt={`Screenshot or thumbnail for ${project.title}`}
+          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none"
+        />
+      </div>
 
       <div className={`flex flex-1 flex-col ${isLarge ? "lg:p-4 p-5" : "p-5"}`}>
         <h3

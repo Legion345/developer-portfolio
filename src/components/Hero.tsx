@@ -19,19 +19,12 @@ export function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Harel Asaraf
+            HAREL ASARAF
           </h1>
 
           <h2 className="text-xl md:text-2xl text-gray-600 mb-8">
-            Full-Stack Developer
+            SOFTWARE ENGINEER, FRONT END & APP DEVELOPER.
           </h2>
-
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Your business deserves a website that actually works for you.
-            <br />
-            <br />
-            Web apps and mobile apps -- delivered fast.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
