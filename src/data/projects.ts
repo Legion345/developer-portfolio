@@ -2,10 +2,7 @@ import sovrnCoaching from "@/assets/images/sovrn-project.png";
 import contractorHero from "@/assets/images/contractor-hero-project.png";
 import movieAppImage from "@/assets/images/movie-app.png";
 import sababaNightsImage from "@/assets/images/sababanights.png";
-import textBasedAdventureImage from "@/assets/images/text-based-adventure.png";
-import westernImage from "@/assets/images/2dwestern.png";
 import sobrietySevenImage from "@/assets/images/sobriety-seven.png";
-import arduinoCarImage from "@/assets/images/arduino-car.png";
 
 export type Project = {
   id: string;
@@ -46,7 +43,7 @@ export const projects: Project[] = [
   {
     id: "3",
     slug: "movie-app",
-    title: "Movie App - Mobile",
+    title: "Movie App",
     category: "Mobile App",
     image: movieAppImage,
     description:
@@ -64,7 +61,7 @@ export const projects: Project[] = [
   {
     id: "4",
     slug: "sababa-nights",
-    title: "Sababa Nights Dancing - Web Development",
+    title: "Sababa Nights Dancing",
     category: "Web Development",
     image: sababaNightsImage,
     description:
@@ -81,30 +78,8 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "arduino-car",
-    title: "Arduino Car - (Personal project)",
-    category: "Hardware / IoT",
-    image: arduinoCarImage,
-    description:
-      "Designed and built an Arduino Uno–based obstacle-avoiding robot that autonomously detects objects in its path, stops and reverses to create clearance, scans left and right to assess distances, and dynamically turns toward the direction with the most open space for efficient navigation.",
-    technologies: ["C++", "Makefile", "Arduino UNO"],
-    githubUrl: "https://github.com/Legion345/arduino-car",
-  },
-  {
-    id: "6",
-    slug: "dungeon-crawler",
-    title: "Dungeon Crawler Prototype",
-    category: "Game",
-    image: textBasedAdventureImage,
-    description:
-      "A lightweight RPG prototype built in Java using standard library tools. The project focuses on clean, responsive command-line interaction and a reliable game-state loop, showing how core gameplay systems can be implemented without external frameworks.",
-    technologies: ["Java"],
-    githubUrl: "https://github.com/Legion345/Text-based-adventure",
-  },
-  {
-    id: "7",
     slug: "sobriety-seven",
-    title: "Sobriety Seven - Mobile",
+    title: "Sobriety Seven",
     category: "Mobile App",
     image: sobrietySevenImage,
     description:
@@ -120,17 +95,6 @@ export const projects: Project[] = [
       "MongoDB",
     ],
     githubUrl: "https://github.com/Legion345/movie_app",
-  },
-  {
-    id: "8",
-    slug: "2d-adventure",
-    title: "2D Adventure Game - (Personal project)",
-    category: "Game",
-    image: westernImage,
-    description:
-      "A Java-based western adventure game featuring a custom 60 FPS game loop, sprite-based animations, and WASD character controls. Built with Java Swing and Gradle, implementing an entity-component architecture with double-buffered rendering for smooth gameplay. Demonstrates core game development principles including delta-time synchronization, event-driven input handling, and efficient resource management",
-    technologies: ["Java", "Gradle", "GIMP"],
-    githubUrl: "https://github.com/Legion345/2dAdventure",
   },
 ];
 
