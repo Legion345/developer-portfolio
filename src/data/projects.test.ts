@@ -14,7 +14,8 @@ describe("projects data", () => {
   });
 
   it("looks up a project by slug and returns undefined when missing", () => {
-    expect(getProjectBySlug("movie-app")?.title).toBe("Movie App - Mobile");
+    const first = projects[0];
+    expect(getProjectBySlug(first.slug)?.title).toBe(first.title);
     expect(getProjectBySlug("nope")).toBeUndefined();
   });
 });
