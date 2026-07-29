@@ -34,7 +34,7 @@ export function Contact() {
         );
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error(data.message || "Something went wrong. Please try again.");
+        toast.error("Something went wrong sending your message. Please try again, or email me directly at harel@harelasaraf.com.");
       }
     } catch (error) {
       // Never swallow the failure silently — log for diagnosis and tell the user.
@@ -86,7 +86,12 @@ export function Contact() {
                     d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="text-gray-300">harel@harelasaraf.com</span>
+                <a
+                  href="mailto:harel@harelasaraf.com"
+                  className="rounded-sm bg-gradient-to-t from-blue-500/60 to-blue-500/60 bg-[length:100%_45%] bg-bottom bg-no-repeat px-1 text-white transition-[background-size] duration-300 ease-out motion-reduce:transition-none hover:bg-[length:100%_100%] focus-visible:bg-[length:100%_100%] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                >
+                  harel@harelasaraf.com
+                </a>
               </div>
             </div>
 

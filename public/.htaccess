@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Canonical host: redirect the bare apex to www (301), Host-aware so www is
+# never redirected to itself. Replaces the hPanel "Redirects" rule, which is
+# Host-blind and caused a www -> www redirect loop.
+RewriteCond %{HTTP_HOST} ^harelasaraf\.com$ [NC]
+RewriteRule ^(.*)$ https://www.harelasaraf.com/$1 [L,R=301]
+
+# Block direct access to the .builds directory (existing rule, preserved).
+RewriteRule ^\.builds - [F,L]

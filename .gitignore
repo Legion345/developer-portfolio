@@ -28,3 +28,6 @@ package-lock.json
 
 # CLaude Code tooling (TDD Guard scratch data, etc.)
 .claude/
+
+# Superpowers docs (specs, scratch design docs)
+docs/superpowers/
