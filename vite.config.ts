@@ -16,6 +16,9 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
-    reporters: ["default", new VitestReporter(path.resolve(__dirname))],
+    reporters: [
+      "default",
+      new VitestReporter({ projectRoot: path.resolve(__dirname) }),
+    ],
   },
 });
